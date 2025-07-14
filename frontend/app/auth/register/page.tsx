@@ -27,14 +27,42 @@ export default function RegisterPage() {
     };
 
     return (
-        <main className="p-6 max-w-md mx-auto">
-            <h1 className="text-2xl font-bold mb-4">Register</h1>
-            <form onSubmit={handleSubmit} className="space-y-4">
-                <input name="username" placeholder="Username" onChange={handleChange} className="border p-2 w-full" required />
-                <input name="email" type="email" placeholder="Email" onChange={handleChange} className="border p-2 w-full" required />
-                <input name="password" type="password" placeholder="Password" onChange={handleChange} className="border p-2 w-full" required />
-                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded w-full">Register</button>
-            </form>
+        <main className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
+            <div className="p-6 max-w-md mx-auto">
+                <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Register</h1>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    <input
+                        name="username"
+                        placeholder="Username"
+                        onChange={handleChange}
+                        className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-2 w-full rounded"
+                        required
+                    />
+                    <input
+                        name="email"
+                        type="email"
+                        placeholder="Email"
+                        onChange={handleChange}
+                        className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-2 w-full rounded"
+                        required
+                    />
+                    <input
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        onChange={handleChange}
+                        className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-2 w-full rounded"
+                        required
+                    />
+                    <button
+                        type="submit"
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full"
+                    >
+                        Register
+                    </button>
+                </form>
+            </div>
         </main>
+
     );
 }
