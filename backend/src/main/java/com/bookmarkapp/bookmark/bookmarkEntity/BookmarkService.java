@@ -44,6 +44,10 @@ public class BookmarkService {
         return toResponse(updated);
     }
 
+    public void deleteBookmark(Long id) {
+        repository.deleteById(id);
+    }
+
     private BookmarkResponseDTO toResponse(Bookmark b) {
         return BookmarkResponseDTO.builder()
                 .id(b.getId())

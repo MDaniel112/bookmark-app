@@ -8,6 +8,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -45,5 +46,11 @@ public class BookmarkController {
             @AuthenticationPrincipal User user,
             @PathVariable Long id) {
         return ResponseEntity.ok(bookmarkService.updateLastVisited(user, id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteBookmark(@PathVariable Long id) {
+        bookmarkService.deleteBookmark(id);
+        return ResponseEntity.ok(Map.of("message", "bookmark deleted"));
     }
 }

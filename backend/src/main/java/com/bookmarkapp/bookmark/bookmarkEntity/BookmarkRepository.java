@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
     List<Bookmark> findAllByUser(User user);
     Optional<Bookmark> findByIdAndUser(Long id, User user);
+    void deleteById(Long id);
 }
