@@ -37,7 +37,7 @@ public class UserController {
         return ResponseEntity.ok(Map.of("message", "Logged in successfully"));
     }
 
-    @GetMapping("/logout")
+    @PostMapping("/logout")
     public ResponseEntity<?> logout(HttpServletRequest request) {
         request.getSession().invalidate();  // Destroy session
         return ResponseEntity.ok(Map.of("message", "Logged out successfully"));
